@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Insights Dashboard | HH.ru Analysis</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header class="glass-header">
+        <div class="header-content">
+            <h1>
+                <span class="highlight">Job Market</span> Insights
+            </h1>
+
+            <h1>
+                <i class="fas fa-chart-line"></i> Visual analysis of job postings from hh.ru
+            </h1>
+        </div>
+        <div class="header-actions">
+            <button class="refresh-btn">
+                <i class="fas fa-sync-alt"></i> Refresh Data
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="dashboard-container">
+            <div class="chart-card glass-card" data-aos="fade-up">
+                <div class="chart-header">
+                    <h2>
+                        <i class="fas fa-code icon-accent"></i> Top Required Skills
+                    </h2>
+                    <div class="chart-legend">
+                        <span class="legend-item"><span class="legend-color" style="background: #4e79a7"></span> Technical</span>
+                        <span class="legend-item"><span class="legend-color" style="background: #f28e2b"></span> Soft Skills</span>
+                    </div>
+                </div>
+                <div class="chart-wrapper" id="skills-chart"></div>
+                <div class="chart-footer">
+                    <span class="info-text"><i class="fas fa-info-circle"></i> Hover over bars for details</span>
+                </div>
+            </div>
+
+            <div class="chart-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="chart-header">
+                    <h2>
+                        <i class="fas fa-keyboard icon-accent"></i> Most Frequent Terms
+                    </h2>
+                </div>
+                <div class="chart-wrapper" id="terms-chart"></div>
+            </div>
+
+            <div class="chart-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="chart-header">
+                    <h2>
+                        <i class="fas fa-user-tie icon-accent"></i> Experience Levels
+                    </h2>
+
+                </div>
+                <div class="chart-wrapper" id="experience-chart"></div>
+                <div class="chart-footer">
+                    <div class="progress-container">
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="chart-header">
+                    <h2>
+                        <i class="fas fa-money-bill-wave icon-accent"></i> Salary Types
+                    </h2>
+                </div>
+                <div class="chart-wrapper" id="salary-chart"></div>
+                <div class="chart-footer">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-value">72%</span>
+                            <span class="stat-label">Hourly Rate</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">28%</span>
+                            <span class="stat-label">Fixed Price</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="app.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out-quad'
+        });
+    </script>
+</body>
+</html>
